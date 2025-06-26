@@ -1,228 +1,129 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Feliz 7 anos de namoro!</title>
+  <title>Feliz 7 anos de namoro</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-    body, html {
-      margin: 0; padding: 0; height: 100%;
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #ffe4e1, #ffcad4);
-      color: #4b2e3b;
-      overflow: hidden;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
     }
     .container {
-      height: 100vh;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px 20px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
+      gap: 30px;
       position: relative;
     }
-    .confetti, .hearts, .stars {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      top: 0; left: 0;
-      overflow: visible;
-      z-index: 0;
+    .texto {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      opacity: 0;
+      transition: opacity 1s ease;
     }
-    h1 {
-      font-size: 2.8rem;
-      margin-bottom: 0.3em;
-    }
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1em;
-      font-weight: 700;
-      color: #922d50;
-    }
-    p {
-      font-size: 1.2rem;
-      max-width: 350px;
-      margin: 0 auto 1.5em auto;
-      line-height: 1.4;
-      color: #5a3b4d;
-    }
-    .photo-placeholder {
-      width: 220px;
-      height: 350px;
-      background: #f4d3da;
-      border-radius: 20px;
-      border: 3px solid #d983a0;
-      box-shadow: 0 0 15px rgba(217, 131, 160, 0.5);
-      margin-bottom: 1.5em;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #a36878;
-      font-size: 1rem;
-      font-style: italic;
+    .texto.mostrar {
+      opacity: 1;
     }
     button {
-      background: #d85a84;
+      align-self: center;
+      padding: 12px 24px;
+      background-color: #fff;
+      color: #000;
       border: none;
-      padding: 12px 30px;
-      border-radius: 30px;
-      color: white;
-      font-weight: 700;
-      font-size: 1.1rem;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 25px;
       cursor: pointer;
-      box-shadow: 0 4px 8px rgba(216, 90, 132, 0.5);
-      transition: background 0.3s ease;
+      margin-top: 40px;
     }
-    button:hover {
-      background: #bf486f;
+    .confete {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      border-radius: 50%;
+      top: -10px;
+      animation: cair 6s linear infinite;
+      opacity: 0.8;
     }
-    .hidden {
-      display: none;
+    @keyframes cair {
+      to {
+        transform: translateY(120vh) rotate(360deg);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- Página 1 -->
-<div id="page1" class="container">
-  <div class="confetti" id="confetti"></div>
-  <h1>Feliz Aniversário!</h1>
-  <h2>Feliz 7 anos de namoro</h2>
+<div class="container" id="pagina1">
+  <div class="texto" id="linha1">Meu amor, hoje é seu dia,</div>
+  <div class="texto" id="linha2">mas quem ganha o presente por ter você na minha vida sou eu.</div>
+  <div class="texto" id="linha3">(Eu sei que a frase é clichê, kkkkk)</div>
+  <div class="texto" id="linha4">Seu aniversário é uma das datas mais especiais pra mim.</div>
+  <div class="texto" id="linha5">Não só porque é o dia que você chegou no mundo,</div>
+  <div class="texto" id="linha6">mas também porque marca o nosso amor.</div>
+  <div class="texto" id="linha7">São sete anos ao seu lado.</div>
+  <div class="texto" id="linha8">E eu só posso agradecer por tudo que você é pra mim.</div>
+  <div class="texto" id="linha9">Eu te amo tanto.</div>
+  <div class="texto" id="linha10">E só quero fazer desse dia o mais especial da sua vida,</div>
+  <div class="texto" id="linha11">e também o mais especial da minha.</div>
+  <div class="texto" id="linha12">Espero que tenha gostado da surpresa.</div>
+  <div class="texto" id="linha13">E que a gente continue assim, sempre tentando fazer tudo com amor.</div>
+  <div class="texto" id="linha14">Agora clica no botãozinho abaixo. 💖</div>
   
-  <div class="photo-placeholder">Foto do casal aqui</div>
-  
-  <p>Meu bem,<br><br>
-  hoje é o seu dia. Mas quem ganha o presente por ter você na minha vida sou eu.<br>
-  (<em>Eu sei que a frase é clichê, kkkkk</em>)<br><br>
-  Mas seu aniversário é uma das datas mais especiais pra mim.<br><br>
-  E não é só porque é o dia que você nasceu e chegou no mundo, mas também porque marca o nosso amor.<br><br>
-  São sete anos ao seu lado e eu só posso agradecer por tudo que você é pra mim.<br><br>
-  Eu te amo tanto e só quero fazer do seu dia o dia mais especial da sua vida e o dia mais especial da minha vida também.<br><br>
-  Eu espero que você tenha gostado da minha surpresa.<br><br>
-  Sim, espero que tenha conseguido deixar o seu dia mais especial.<br><br>
-  E que a gente possa fazer isso sempre, todos os anos da nossa vida: esse esforço de querer agradar um ao outro tanto quanto a gente pode.<br><br>
-  E por isso... a próxima surpresa é:</p>
-  
-  <button id="nextBtn">👉 Clique aqui para a próxima página</button>
+  <button onclick="irParaSurpresa()">👉 Ver próxima surpresa</button>
 </div>
 
 <!-- Página 2 -->
-<div id="page2" class="container hidden" style="background: linear-gradient(135deg, #ffcad4, #ffe4e1); color: #641e39;">
-  <div class="hearts" id="hearts"></div>
-  <div class="stars" id="stars"></div>
-  
-  <h1 id="line1" style="opacity:0;">Porque presente bom é presente que marca.</h1>
-  <h2 id="line2" style="opacity:0; margin-top: 0.5em;">E por isso, você acaba de ganhar um Vale Tattoo agendado para amanhã às 11h30.</h2>
+<div class="container" id="pagina2" style="display: none;">
+  <div class="texto mostrar" style="font-size: 1.4rem; font-weight: bold;" id="linha15">Porque presente bom é presente que marca.</div>
+  <div class="texto" id="linha16" style="font-size: 1.2rem; margin-top: 20px;">E por isso, você acaba de ganhar um Vale Tattoo</div>
+  <div class="texto" id="linha17" style="font-size: 1.2rem;">agendado para amanhã às 11h30. 🎁</div>
 </div>
 
 <script>
-  // Confetti simples para página 1
-  function createConfetti() {
-    const confettiContainer = document.getElementById('confetti');
-    for(let i=0; i<50; i++) {
-      const confetto = document.createElement('div');
-      confetto.style.position = 'absolute';
-      confetto.style.width = '8px';
-      confetto.style.height = '8px';
-      confetto.style.background = ['#f44336','#e91e63','#9c27b0','#ffeb3b','#4caf50'][Math.floor(Math.random()*5)];
-      confetto.style.left = Math.random() * 100 + '%';
-      confetto.style.top = Math.random() * 100 + '%';
-      confetto.style.borderRadius = '50%';
-      confettiContainer.appendChild(confetto);
+  // Animação dos textos da primeira página
+  const linhas = document.querySelectorAll('#pagina1 .texto');
+  linhas.forEach((linha, i) => {
+    setTimeout(() => {
+      linha.classList.add('mostrar');
+    }, i * 2000); // 2 segundos entre cada linha
+  });
 
-      // animação queda
-      confetto.animate([
-        { transform: `translateY(0) rotate(0deg)` },
-        { transform: `translateY(300px) rotate(360deg)` }
-      ], {
-        duration: 5000 + Math.random()*5000,
-        iterations: Infinity,
-        delay: Math.random()*5000
-      });
-    }
-  }
-
-  // corações caindo para página 2
-  function createHearts() {
-    const heartsContainer = document.getElementById('hearts');
-    for(let i=0; i<30; i++) {
-      const heart = document.createElement('div');
-      heart.style.position = 'absolute';
-      heart.style.width = '10px';
-      heart.style.height = '10px';
-      heart.style.background = '#ff5c8d';
-      heart.style.clipPath = 'polygon(50% 0%, 61% 12%, 75% 15%, 90% 35%, 90% 60%, 75% 90%, 50% 100%, 25% 90%, 10% 60%, 10% 35%, 25% 15%, 39% 12%)';
-      heart.style.left = Math.random() * 100 + '%';
-      heart.style.top = Math.random() * 100 + '%';
-      heart.style.opacity = 0.8;
-      heartsContainer.appendChild(heart);
-
-      heart.animate([
-        { transform: `translateY(0) rotate(0deg)` },
-        { transform: `translateY(400px) rotate(360deg)` }
-      ], {
-        duration: 8000 + Math.random()*4000,
-        iterations: Infinity,
-        delay: Math.random()*8000
-      });
-    }
-  }
-
-  // estrelinhas caindo para página 2
-  function createStars() {
-    const starsContainer = document.getElementById('stars');
-    for(let i=0; i<20; i++) {
-      const star = document.createElement('div');
-      star.style.position = 'absolute';
-      star.style.width = '8px';
-      star.style.height = '8px';
-      star.style.background = '#fff5a2';
-      star.style.clipPath = 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)';
-      star.style.left = Math.random() * 100 + '%';
-      star.style.top = Math.random() * 100 + '%';
-      star.style.opacity = 0.9;
-      starsContainer.appendChild(star);
-
-      star.animate([
-        { transform: `translateY(0) rotate(0deg)` },
-        { transform: `translateY(350px) rotate(360deg)` }
-      ], {
-        duration: 10000 + Math.random()*5000,
-        iterations: Infinity,
-        delay: Math.random()*10000
-      });
-    }
-  }
-
-  // animação texto segunda página
-  function animateText() {
-    const line1 = document.getElementById('line1');
-    const line2 = document.getElementById('line2');
-
-    line1.style.transition = "opacity 1s";
-    line1.style.opacity = 1;
+  // Troca de página
+  function irParaSurpresa() {
+    document.getElementById('pagina1').style.display = 'none';
+    document.getElementById('pagina2').style.display = 'flex';
 
     setTimeout(() => {
-      line2.style.transition = "opacity 1s";
-      line2.style.opacity = 1;
-    }, 2200);
+      document.getElementById('linha16').classList.add('mostrar');
+    }, 2000);
+    setTimeout(() => {
+      document.getElementById('linha17').classList.add('mostrar');
+    }, 4000);
   }
 
-  // carregar animações e botão
-  window.onload = () => {
-    createConfetti();
-    createHearts();
-    createStars();
-
-    document.getElementById('nextBtn').addEventListener('click', () => {
-      document.getElementById('page1').classList.add('hidden');
-      document.getElementById('page2').classList.remove('hidden');
-      animateText();
-    });
+  // Confetes e corações caindo
+  function criarConfete() {
+    const confete = document.createElement('div');
+    confete.classList.add('confete');
+    confete.style.left = Math.random() * 100 + "vw";
+    confete.style.animationDuration = 3 + Math.random() * 3 + "s";
+    document.body.appendChild(confete);
+    setTimeout(() => confete.remove(), 6000);
   }
+  setInterval(criarConfete, 200);
 </script>
 
 </body>

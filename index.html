@@ -21,7 +21,7 @@
       margin: auto;
       padding: 30px 20px;
     }
-    h1.titulo {
+    .titulo {
       text-align: center;
       color: #ff4d4d;
       font-size: 2rem;
@@ -29,6 +29,8 @@
       margin-bottom: 25px;
       font-family: 'Georgia', serif;
       text-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff1a1a;
+      opacity: 0;
+      animation: aparecer 3s ease forwards;
     }
     p {
       font-size: 1.1rem;
@@ -83,10 +85,23 @@
       opacity: 0;
       animation: aparecer 3s ease forwards;
     }
+    .vale-tattoo {
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-top: 20px;
+      animation: aparecer 3s ease forwards;
+    }
+    .te-amo {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      color: #ff4d4d;
+      font-weight: bold;
+      animation: aparecer 4s ease forwards;
+    }
     @keyframes aparecer {
-      to {
-        opacity: 1;
-      }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
@@ -103,7 +118,8 @@
 <div class="container pagina escondido" id="pagina2">
   <div class="mensagem-final">
     <div id="frase1">Porque presente bom é presente que marca.</div>
-    <div id="frase2" style="margin-top: 20px;"></div>
+    <div id="frase2" class="vale-tattoo"></div>
+    <div class="te-amo">Te amo</div>
   </div>
 </div>
 

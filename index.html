@@ -2,13 +2,11 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Feliz 7 anos</title>
   <style>
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
     }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -30,12 +28,24 @@
       font-family: 'Georgia', serif;
       text-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff1a1a;
       opacity: 0;
-      animation: aparecer 3s ease forwards;
+      animation: aparecer 2s ease forwards;
     }
-    p {
+    .texto-animado {
+      opacity: 0;
+      animation: aparecerTexto 2s ease forwards;
+      animation-delay: 2s;
+      margin-top: 15px;
       font-size: 1.1rem;
       line-height: 1.7;
       text-align: justify;
+    }
+    @keyframes aparecer {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes aparecerTexto {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     button {
       display: block;
@@ -56,6 +66,8 @@
       color: red;
       animation: cair 5s linear infinite;
       opacity: 0.8;
+      user-select: none;
+      pointer-events: none;
     }
     @keyframes cair {
       to {
@@ -67,14 +79,8 @@
       transition: opacity 1s ease, transform 1s ease;
       min-height: 100vh;
     }
-    .escondido {
-      display: none;
-    }
-    .visivel {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .escondido { display: none; }
+    .visivel { display: block; }
     .mensagem-final {
       font-size: 1.5rem;
       color: #ff4d4d;
@@ -83,25 +89,23 @@
       font-family: 'Georgia', serif;
       text-shadow: 0 0 8px #ff4d4d;
       opacity: 0;
-      animation: aparecer 3s ease forwards;
+    }
+    .vale-tattoo, .te-amo {
+      opacity: 0;
+      font-weight: bold;
     }
     .vale-tattoo {
       color: #fff;
-      font-weight: bold;
       font-size: 1.2rem;
       margin-top: 20px;
-      animation: aparecer 3s ease forwards;
     }
     .te-amo {
       margin-top: 30px;
       font-size: 1.2rem;
       color: #ff4d4d;
-      font-weight: bold;
-      animation: aparecer 4s ease forwards;
     }
-    @keyframes aparecer {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .aparecer-final {
+      animation: aparecer 2s ease forwards;
     }
   </style>
 </head>
@@ -109,18 +113,16 @@
 
 <div class="container pagina" id="pagina1">
   <h1 class="titulo">Feliz aniversário e feliz 7 anos de namoro</h1>
-  <p>
+  <p class="texto-animado">
     Meu amor, hoje é o seu dia, mas quem ganha o presente por ter você na minha vida sou eu. (Eu sei que essa frase é clichê, kkkk). Seu aniversário é uma das datas mais especiais pra mim. Não apenas porque é o dia que você nasceu e chegou no mundo, mas também porque ele marca o nosso amor. São sete anos ao seu lado e eu só posso agradecer por tudo que você é pra mim. Eu te amo tanto, e tudo que mais quero é fazer desse dia o mais especial da sua vida — e também da minha. Espero que essa surpresa tenha te feito sorrir, porque você merece o mundo. Que a gente siga sempre assim, tentando fazer o melhor um pelo outro, com todo amor do mundo.
   </p>
   <button onclick="mostrarSurpresa()">👉 Ver próxima surpresa</button>
 </div>
 
 <div class="container pagina escondido" id="pagina2">
-  <div class="mensagem-final">
-    <div id="frase1">Porque presente bom é presente que marca.</div>
-    <div id="frase2" class="vale-tattoo"></div>
-    <div class="te-amo">Te amo</div>
-  </div>
+  <div class="mensagem-final" id="frase1">Porque presente bom é presente que marca.</div>
+  <div id="frase2" class="vale-tattoo"></div>
+  <div id="frase3" class="te-amo">Te amo</div>
 </div>
 
 <script>
@@ -131,8 +133,18 @@
     pagina2.classList.add("visivel");
 
     setTimeout(() => {
-      document.getElementById("frase2").textContent = "E por isso, você acaba de ganhar um Vale Tattoo agendado para amanhã às 11h30. 🎁";
+      document.getElementById("frase1").classList.add("aparecer-final");
+    }, 500);
+
+    setTimeout(() => {
+      const frase2 = document.getElementById("frase2");
+      frase2.textContent = "E por isso, você acaba de ganhar um Vale Tattoo agendado para amanhã às 11h30. 🎁";
+      frase2.classList.add("aparecer-final");
     }, 3000);
+
+    setTimeout(() => {
+      document.getElementById("frase3").classList.add("aparecer-final");
+    }, 5500);
   }
 
   function criarCoracao() {

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Feliz 7 anos de namoro</title>
+  <title>Feliz 7 Anos</title>
   <style>
     * {
       margin: 0;
@@ -11,54 +11,52 @@
       box-sizing: border-box;
     }
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       background-color: #000;
       color: #fff;
       overflow-x: hidden;
     }
     .container {
-      max-width: 600px;
+      max-width: 700px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 30px 20px;
       display: flex;
       flex-direction: column;
       gap: 30px;
-      position: relative;
     }
-    .texto {
-      font-size: 1.3rem;
-      line-height: 1.6;
-      opacity: 0;
-      transition: opacity 1s ease;
+    h1 {
+      text-align: center;
+      color: red;
+      font-size: 1.8rem;
+      margin-bottom: 30px;
     }
-    .texto.mostrar {
-      opacity: 1;
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      text-align: justify;
     }
     button {
       align-self: center;
+      margin-top: 40px;
       padding: 12px 24px;
       background-color: #fff;
       color: #000;
       border: none;
-      font-weight: bold;
-      font-size: 1rem;
       border-radius: 25px;
+      font-weight: bold;
       cursor: pointer;
-      margin-top: 40px;
     }
-    .confete {
+    .coracao {
       position: fixed;
-      width: 10px;
-      height: 10px;
-      background-color: red;
-      border-radius: 50%;
-      top: -10px;
+      top: -20px;
+      font-size: 20px;
+      color: red;
       animation: cair 6s linear infinite;
-      opacity: 0.8;
+      opacity: 0.7;
     }
     @keyframes cair {
       to {
-        transform: translateY(120vh) rotate(360deg);
+        transform: translateY(120vh);
         opacity: 0;
       }
     }
@@ -67,63 +65,38 @@
 <body>
 
 <div class="container" id="pagina1">
-  <div class="texto" id="linha1">Meu amor, hoje é seu dia,</div>
-  <div class="texto" id="linha2">mas quem ganha o presente por ter você na minha vida sou eu.</div>
-  <div class="texto" id="linha3">(Eu sei que a frase é clichê, kkkkk)</div>
-  <div class="texto" id="linha4">Seu aniversário é uma das datas mais especiais pra mim.</div>
-  <div class="texto" id="linha5">Não só porque é o dia que você chegou no mundo,</div>
-  <div class="texto" id="linha6">mas também porque marca o nosso amor.</div>
-  <div class="texto" id="linha7">São sete anos ao seu lado.</div>
-  <div class="texto" id="linha8">E eu só posso agradecer por tudo que você é pra mim.</div>
-  <div class="texto" id="linha9">Eu te amo tanto.</div>
-  <div class="texto" id="linha10">E só quero fazer desse dia o mais especial da sua vida,</div>
-  <div class="texto" id="linha11">e também o mais especial da minha.</div>
-  <div class="texto" id="linha12">Espero que tenha gostado da surpresa.</div>
-  <div class="texto" id="linha13">E que a gente continue assim, sempre tentando fazer tudo com amor.</div>
-  <div class="texto" id="linha14">Agora clica no botãozinho abaixo. 💖</div>
-  
+  <h1>Feliz aniversário e feliz 7 anos de namoro</h1>
+  <p>
+    Meu amor, hoje é o seu dia. Mas quem ganha o presente por ter você na minha vida sou eu. (Eu sei que essa frase é clichê, kkkk). Seu aniversário é uma das datas mais especiais pra mim. E não é só porque é o dia que você nasceu e chegou no mundo, mas também porque ele marca a nossa história. São sete anos ao seu lado, e eu só posso agradecer por tudo que você é pra mim. Eu te amo tanto, e tudo o que eu mais quero é fazer desse dia o mais especial da sua vida – e o mais especial da minha também. Espero que você tenha gostado da surpresa e que esse gesto tenha deixado seu dia mais feliz. Que a gente siga sempre assim, fazendo o possível pra ver o outro sorrir.
+  </p>
   <button onclick="irParaSurpresa()">👉 Ver próxima surpresa</button>
 </div>
 
-<!-- Página 2 -->
 <div class="container" id="pagina2" style="display: none;">
-  <div class="texto mostrar" style="font-size: 1.4rem; font-weight: bold;" id="linha15">Porque presente bom é presente que marca.</div>
-  <div class="texto" id="linha16" style="font-size: 1.2rem; margin-top: 20px;">E por isso, você acaba de ganhar um Vale Tattoo</div>
-  <div class="texto" id="linha17" style="font-size: 1.2rem;">agendado para amanhã às 11h30. 🎁</div>
+  <h1 style="font-size: 1.6rem;">Porque presente bom é presente que marca</h1>
+  <p style="margin-top: 20px;">
+    E por isso, você acaba de ganhar um Vale Tattoo agendado para amanhã às 11h30. 🎁
+  </p>
 </div>
 
 <script>
-  // Animação dos textos da primeira página
-  const linhas = document.querySelectorAll('#pagina1 .texto');
-  linhas.forEach((linha, i) => {
-    setTimeout(() => {
-      linha.classList.add('mostrar');
-    }, i * 2000); // 2 segundos entre cada linha
-  });
-
-  // Troca de página
   function irParaSurpresa() {
-    document.getElementById('pagina1').style.display = 'none';
-    document.getElementById('pagina2').style.display = 'flex';
-
-    setTimeout(() => {
-      document.getElementById('linha16').classList.add('mostrar');
-    }, 2000);
-    setTimeout(() => {
-      document.getElementById('linha17').classList.add('mostrar');
-    }, 4000);
+    document.getElementById("pagina1").style.display = "none";
+    document.getElementById("pagina2").style.display = "flex";
   }
 
-  // Confetes e corações caindo
-  function criarConfete() {
-    const confete = document.createElement('div');
-    confete.classList.add('confete');
-    confete.style.left = Math.random() * 100 + "vw";
-    confete.style.animationDuration = 3 + Math.random() * 3 + "s";
-    document.body.appendChild(confete);
-    setTimeout(() => confete.remove(), 6000);
+  function criarCoracao() {
+    const coracao = document.createElement("div");
+    coracao.classList.add("coracao");
+    coracao.innerHTML = "❤️";
+    coracao.style.left = Math.random() * 100 + "vw";
+    coracao.style.fontSize = 18 + Math.random() * 10 + "px";
+    coracao.style.animationDuration = 4 + Math.random() * 3 + "s";
+    document.body.appendChild(coracao);
+    setTimeout(() => coracao.remove(), 7000);
   }
-  setInterval(criarConfete, 200);
+
+  setInterval(criarCoracao, 300);
 </script>
 
 </body>
